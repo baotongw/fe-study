@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS3 - Animate.css</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.5.2/animate.css">
+    <link rel="stylesheet" href="../libs/reset.css">
+    <style>
+        body {
+            color: #00bcd4
+        }
+        .box { position: absolute; height: 300px; width: 100%; top: 50%; margin-top: -200px; }
+        .seed {
+            line-height: 300px;
+            font-size: 48px;
+            text-align: center;
+        }
+        .page-title {
+            margin-top: 50px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="page-title">Animate Demo Show</h1>
+    <div id="box" class="box"></div>
+    <script>
+        let source = 'bounce|flash|pulse|rubberBand|shake|swing|tada|wobble|jello|bounceIn|bounceInDown|bounceInLeft|bounceInRight|bounceInUp|bounceOut|bounceOutDown|bounceOutLeft|bounceOutRight|bounceOutUp|fadeIn|fadeInDown|fadeInDownBig|fadeInLeft|fadeInLeftBig|fadeInRight|fadeInRightBig|fadeInUp|fadeInUpBig|fadeOut|fadeOutDown|fadeOutDownBig|fadeOutLeft|fadeOutLeftBig|fadeOutRight|fadeOutRightBig|fadeOutUp|fadeOutUpBig|flip|flipInX|flipInY|flipOutX|flipOutY|lightSpeedIn|lightSpeedOut|rotateIn|rotateInDownLeft|rotateInDownRight|rotateInUpLeft|rotateInUpRight|rotateOut|rotateOutDownLeft|rotateOutDownRight|rotateOutUpLeft|rotateOutUpRight|slideInUp|slideInDown|slideInLeft|slideInRight|slideOutUp|slideOutDown|slideOutLeft|slideOutRight|zoomIn|zoomInDown|zoomInLeft|zoomInRight|zoomInUp|zoomOut|zoomOutDown|zoomOutLeft|zoomOutRight|zoomOutUp|hinge|rollIn|rollOut';
+        let types = source.split('|');
+        let box = document.getElementById('box');
+
+        types.forEach((t, i) => {
+            (function(type) {
+                console.log(type);
+                setTimeout(() => {
+                    box.innerHTML = `<div class="seed animated ${type}">${type}</div>`;
+                }, i * 1500);
+            })(t)
+        })
+    </script>
+</body>
+</html>
