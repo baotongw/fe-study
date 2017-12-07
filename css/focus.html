@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>focus-within</title>
+    <style>
+        .form {
+            padding: 10px;
+            border: 3px solid transparent;
+        }
+        .form .email:focus {
+            background: yellow;
+        }
+        .form .address:focus {
+            background: green;
+        }
+        .form:focus-within {
+            border-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        在CSS中:focus-within是一个伪类，现在已经被列入到CSS选择器中（CSS Level 4 selector）。<br>
+        他就像你知道的:focus或者:hover，:focus-within能非常方便处理获取焦点状态。<br>
+        当元素本身或其后代元素获得焦点时，:focus-within伪类的元素就会有效。
+    </p>
+    <div class="form">
+        <div>
+            <label for="email">
+                Your Email: 
+            </label>
+            <input type="email" class="email" id="email" />
+        </div>
+        <div>
+            <label for="address">
+                Your Address: 
+            </label>
+            <input type="input" class="address" id="address" />
+        </div>
+    </div>
+</body>
+</html>
